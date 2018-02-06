@@ -90,3 +90,13 @@ h1 {
     height: 20px;
     padding: 8px;
 }
+
+#total-score {
+    background-color: teal;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    color: white;
+    width: 250px;
+    height: 120px;
+    padding: 8px;
+}
