@@ -25,6 +25,7 @@ h1 {
 }
 
 #random-number {
+    font-size: 70px;
     float: left;
     padding: 5px;
     background-color: lightgreen;
