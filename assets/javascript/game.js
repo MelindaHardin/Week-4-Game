@@ -1,51 +1,66 @@
 
 
-//alert("Your score is: " + counter + " points.");
-var counter = 0;
+//alert("Your score is: " + score + " points.");
+var score = 0;
 var randomNumber=Math.floor(Math.random()*120)+19;
+var crystalValuesData=Math.floor(Math.random()*12) +1;
 var wins= 1;
 var losses= 1;
-
-function assignValue (){
-
-    var crystalValues=Math.floor(Math.random()*12) +1;
-        counter+=crystalValues;
-        $("#total-score").text(counter);
-        
-
-        if(counter === randomNumber){
-            alert("YOU WIN!");
-            $("#wins").text(wins++);
-        }
-
-        else if (counter > randomNumber){
-            alert ("Too high!");
-            $("#losses").text(losses++);
-        }
-}
 
 
 $("#random-number").text(randomNumber);
 
-    $("#sapphire").on("click", function(){
+//$(".crystal").on("click", function(){
+    //assignValue () 
+//});
 
-        assignValue () 
-    });
+$("#sapphire").on("click", function(){
+    assignValue () 
+    crystalValues=$(this).attr("crystalValuesData");
+});
 
-    $("#RedGem").on("click", function(){
-        assignValue ()
+$("#RedGem").on("click", function(){
+    assignValue () 
+    crystalValues=$(this).attr("crystalValuesData");
+});
 
-    });
+$("#Peridot").on("click", function(){
+    assignValue () 
+    crystalValues=$(this).attr("crystalValuesData");
+});
 
-    $("#Peridot").on("click", function(a){
-        assignValue ()
+$("#Amethyst").on("click", function(){
+    assignValue () 
+    crystalValues=$(this).attr("crystalValuesData");
+});
 
-    });
 
-    $("#Amethyst").on("click", function(){
-        assignValue ()
+function assignValue (){
 
-    });
+    //crystalValues=$(this).attr("crystalValuesData");
+    score+=crystalValuesData;
+    $("#total-score").text(score);
+
+        if(score === randomNumber){
+            alert("YOU WIN!");
+            $("#wins").text(wins++);
+            score=0;
+        }
+
+        else if (score > randomNumber){
+            alert ("Too high!");
+            $("#losses").text(losses++);
+                        
+        }
+}
+
+
+
+
+
+
+
+    
 
 
 
