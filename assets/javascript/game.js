@@ -3,53 +3,60 @@
 //alert("Your score is: " + score + " points.");
 var score = 0;
 var randomNumber=Math.floor(Math.random()*120)+19;
-var crystalValuesData=Math.floor(Math.random()*12) +1;
+var crystalValuesData=""; //Math.floor(Math.random()*12) +1;
 var wins= 1;
 var losses= 1;
 
 
 $("#random-number").text(randomNumber);
 
-//$(".crystal").on("click", function(){
-    //assignValue () 
-//});
+
+$(".crystal").each(function(){
+    $(this).attr("crystalValuesData",Math.floor(Math.random()*12) +1);
+    
+})
 
 $("#sapphire").on("click", function(){
-    assignValue () 
-    crystalValues=$(this).attr("crystalValuesData");
+    var crystalValue=parseInt($(this).attr("crystalValuesData"));
+    assignValue(crystalValue); 
+    
 });
 
 $("#RedGem").on("click", function(){
-    assignValue () 
-    crystalValues=$(this).attr("crystalValuesData");
+    var crystalValue=parseInt($(this).attr("crystalValuesData"));
+    assignValue(crystalValue); 
+   
 });
 
 $("#Peridot").on("click", function(){
-    assignValue () 
-    crystalValues=$(this).attr("crystalValuesData");
+    var crystalValue=parseInt($(this).attr("crystalValuesData"));
+    assignValue(crystalValue);  
+   
 });
 
 $("#Amethyst").on("click", function(){
-    assignValue () 
-    crystalValues=$(this).attr("crystalValuesData");
+    var crystalValue=parseInt($(this).attr("crystalValuesData"));
+    assignValue(crystalValue); 
+   
 });
 
 
-function assignValue (){
+function assignValue (newValue){
 
-    //crystalValues=$(this).attr("crystalValuesData");
-    score+=crystalValuesData;
+    score+=newValue;
+
     $("#total-score").text(score);
 
         if(score === randomNumber){
             alert("YOU WIN!");
             $("#wins").text(wins++);
-            score=0;
+            
         }
 
         else if (score > randomNumber){
             alert ("Too high!");
             $("#losses").text(losses++);
+               
                         
         }
 }
