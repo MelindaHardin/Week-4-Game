@@ -1,29 +1,31 @@
 
 
-
+//alert("Your score is: " + counter + " points.");
 var counter = 0;
 var randomNumber=Math.floor(Math.random()*120)+19;
+var wins= 1;
+var losses= 1;
 
 function assignValue (){
+
     var crystalValues=Math.floor(Math.random()*12) +1;
         counter+=crystalValues;
-
-        alert("Your score is: " + counter + " points.");
+        $("#total-score").text(counter);
+        
 
         if(counter === randomNumber){
-            alert("YOU WIN!")
+            alert("YOU WIN!");
+            $("#wins").text(wins++);
         }
 
         else if (counter > randomNumber){
-            alert ("Too high!")
+            alert ("Too high!");
+            $("#losses").text(losses++);
         }
 }
 
 
-
 $("#random-number").text(randomNumber);
-$("#total-score").text(counter);
-
 
     $("#sapphire").on("click", function(){
 
