@@ -47,7 +47,8 @@ h1 {
 }
 
 #gems {
-    clear: both   
+    clear: both; 
+      
 }
 
 #sapphire{
@@ -56,6 +57,8 @@ h1 {
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
+    
 }
 
 #RedGem {
@@ -64,6 +67,8 @@ h1 {
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
+    
 }
 
 #Peridot{
@@ -72,6 +77,7 @@ h1 {
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #Amethyst {
@@ -80,6 +86,7 @@ h1 {
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #total-title {
